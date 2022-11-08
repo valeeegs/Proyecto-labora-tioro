@@ -20,7 +20,7 @@ public class Producto {
 		System.out.println("------ DATOS PRODUCTO -----"); 
 		System.out.println("Nombre: " + nombre); 
 		System.out.println("Cantidad Ingredientes: " + canIngredientes); 
-		System.out.println("NOMBRE \t CANTIDAD \t PRECIO"); 
+		System.out.println("NOMBRE \t\tCANTIDAD \tPRECIO"); 
 		for(int i=0; i<canIngredientes; i++) {
 			ingredientes[i].mostrar();
 		}
