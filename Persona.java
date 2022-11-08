@@ -18,6 +18,7 @@ public class Persona {
 	
 	public void mostrar(){
 		System.out.println("Nombre: " + nombre);
+		System.out.println("CI: " + ci);
 		System.out.println(nombre + "\t\t" + ci + "\t\t" + edad);
 	}
 	
