@@ -11,6 +11,6 @@ public class Ingrediente {
 	}
 	
 	public void mostrar(){
-		System.out.println("Nombre");
+		System.out.println(nombre + "\t\t" + cantidad + "\t\t" + precio);
 	}
 }
