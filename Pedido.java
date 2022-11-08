@@ -19,6 +19,6 @@ public class Pedido {
 	}
 	
 	public void mostrar(){
-		System.out.println(int idpedidos, int cantidadprod);
+		System.out.println(idpedidos + cantidadprod);
 	}
 }
