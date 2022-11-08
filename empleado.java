@@ -1,6 +1,6 @@
 package ProyectLab;
 
-public class empleado {
+public class empleado extends persona{
 	protected int sueldo;
 	protected String cargo;
 	
