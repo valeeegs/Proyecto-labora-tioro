@@ -9,8 +9,10 @@ public class Main {
 		Inventario i = new Inventario();
 		i.agregarProducto(p1, 2);
 		i.agregarProducto(p1, 6);
-		i.mostrar();
+		//i.mostrar();
 		
+		Confiteria c = new Confiteria();
+		c.mostrar();
 		
 	}
 

@@ -16,7 +16,9 @@ public class Producto {
 		unidadesPorEmpaque = 3;
 	}
 	
-	public void mosrtar(){
+	//public Producto() {}
+	
+	public void mostrar(){
 		System.out.println("------ DATOS PRODUCTO -----"); 
 		System.out.println("Nombre: " + nombre); 
 		System.out.println("Cantidad Ingredientes: " + canIngredientes); 
@@ -28,4 +30,10 @@ public class Producto {
 		System.out.println("Unidades x Empaque: " + unidadesPorEmpaque); 
 		System.out.println("----------------------------"); 
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+	
+	
 }

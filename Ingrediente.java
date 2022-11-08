@@ -2,12 +2,12 @@
 public class Ingrediente {
 	private String nombre;
 	private int cantidad;
-	private float precio;
+	private double precio;
 	
 	public Ingrediente(){
 		nombre = "Azúcar";
 		cantidad = 500;
-		precio = 20.0f;
+		precio = 20.50;
 	}
 	
 	public Ingrediente(String nombre, int cantidad, float precio){
