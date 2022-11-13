@@ -25,4 +25,19 @@ public class Inventario {
 		this.cantidad[nroProductos] = cantidad;
 		nroProductos ++;
 	}
+	
+	/* productoModa: producto más vendido.
+	reducirProduccion: reduce la producción del producto menos vendido.
+	fabricarProducto: indica de fabricar productos. */
+	
+	public double getPrecio(String nombre) {
+		double precio = 0.00;
+		for(int i=0; i<nroProductos; i++) {
+			if(productos[i].getNombre().equals(nombre)) {
+				precio = productos[i].precioVenta();
+				break;
+			}
+		}
+		return precio;
+	}
 }

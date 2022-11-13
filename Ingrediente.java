@@ -19,4 +19,25 @@ public class Ingrediente {
 	public void mostrar(){
 		System.out.println(nombre + "\t\t" + cantidad + "\t\t" + precio);
 	}
+	
+	// not sure about this
+	public boolean disponibilidad() {
+		if(cantidad == 0) {
+			return false;
+		}
+		return true;
+	}
+
+	/*public String getNombre() {
+		return nombre;
+	}*/
+
+	/*public int getCantidad() {
+		return cantidad;
+	}*/
+
+	public double getPrecio() {
+		return precio;
+	}
+	
 }

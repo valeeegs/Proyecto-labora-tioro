@@ -31,9 +31,29 @@ public class Producto {
 		System.out.println("----------------------------"); 
 	}
 
+	
+	
+	/* costeProduccion: la suma de los precios de los ingredientes. double
+	precioVenta: calcula el precio de venta del producto, multiplicando su costeProduccion * 1.35 */
+	
+	public double costeProduccion() {
+		double total = 0;
+		for(int i=0; i<canIngredientes; i++) {
+			total += ingredientes[i].getPrecio();
+		}
+		return total;
+	}
+	
+	public double precioVenta() {
+		double precio;
+		precio = costeProduccion() * 1.35;
+		return precio;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	
 	
 }
