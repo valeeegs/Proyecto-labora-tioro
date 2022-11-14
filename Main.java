@@ -5,12 +5,11 @@ public class Main {
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		Scanner read = new Scanner(System.in);
-		Cliente u1 = new Cliente();
-		u1.mostrar();
 		// TODO Auto-generated method stub
 		Producto p1 = new Producto();
 		Producto p2 = new Producto();
-		p2.leer();
+		//p2.leer();
+		//p2.mostrar();
 		
 		Inventario i = new Inventario();
 		i.agregarProducto(p1, 2);
@@ -30,6 +29,7 @@ public class Main {
 					+ "4. Salir");
 			System.out.print("Elegir la opción: ");
 			op = read.nextInt();
+			read.nextLine();
 			
 			switch(op) {
 			case 1: p.Crear();

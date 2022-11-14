@@ -50,4 +50,22 @@ public class Inventario implements java.io.Serializable{
 	public void productoModa() {
 		
 	}
+
+	public String getFechaActualizacion() {
+		return fechaActualizacion;
+	}
+
+	public int getNroProductos() {
+		return nroProductos;
+	}
+
+	public int[] getCantidad() {
+		return cantidad;
+	}
+
+	public Producto[] getProductos() {
+		return productos;
+	}
+	
+	
 }

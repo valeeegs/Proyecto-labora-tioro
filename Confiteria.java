@@ -52,5 +52,24 @@ public class Confiteria implements java.io.Serializable{
 		pedidos[nroPedidos] = p;
 		nroPedidos++;
 	}
+	
+	public double totalSueldos() {
+		int total = 0;
+		for(int i=0; i<nroEmpleados; i++) {
+			total += empleados[i].getSueldo();
+		}
+		return total;
+	}
+	
+	public void ganaciasTotales() {
+		if(totalSueldos() < capital) {
+			for(int i=0; i<nroEmpleados; i++) {
+				if(empleados[i].isSueldoPagado() == false) {
+					empleados[i].pagarSueldo();
+				}
+			}
+			capital -= totalSueldos();
+		}
+	}
 
 }

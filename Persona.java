@@ -31,4 +31,5 @@ public class Persona {
 		System.out.print("Edad: ");
 		edad = read.nextInt();
 	}
+	
 }

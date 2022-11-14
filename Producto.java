@@ -25,13 +25,13 @@ public class Producto implements java.io.Serializable{
 		System.out.println("Ingrese los datos del producto");
 		Scanner read =  new Scanner(System.in);
 		System.out.print("Nombre : ");
-		nombre = read.next();
+		nombre = read.nextLine();
 		System.out.print("Cantidad de ingredientes: ");
 		canIngredientes = read.nextInt();
 		for(int i=0; i<canIngredientes; i++) {
 			System.out.println("Ingrese los datos del ingrediente nro " + (i+1) + ": ");
 			System.out.print("Nombre: ");
-			n = read.next();
+			n = read.nextLine();
 			System.out.print("Cantidad: ");
 			c = read.nextInt();
 			System.out.print("Precio: ");
