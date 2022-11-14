@@ -1,5 +1,6 @@
+import java.util.Scanner;
 
-public class Producto {
+public class Producto implements java.io.Serializable{
 	private String nombre;
 	private int canIngredientes;
 	private Ingrediente[] ingredientes = new Ingrediente[50];
@@ -16,7 +17,32 @@ public class Producto {
 		unidadesPorEmpaque = 3;
 	}
 	
-	//public Producto() {}
+	/*Scanner read =  new Scanner(System.in);
+		System.out.print(": ");
+		= read.next();*/
+	public void leer() {
+		String n; int c; double p;
+		System.out.println("Ingrese los datos del producto");
+		Scanner read =  new Scanner(System.in);
+		System.out.print("Nombre : ");
+		nombre = read.next();
+		System.out.print("Cantidad de ingredientes: ");
+		canIngredientes = read.nextInt();
+		for(int i=0; i<canIngredientes; i++) {
+			System.out.println("Ingrese los datos del ingrediente nro " + (i+1) + ": ");
+			System.out.print("Nombre: ");
+			n = read.next();
+			System.out.print("Cantidad: ");
+			c = read.nextInt();
+			System.out.print("Precio: ");
+			p = read.nextDouble();
+			ingredientes[i] = new Ingrediente(n, c, p);
+		}
+		System.out.print("Tiempo producción: ");
+		tiempoProd = read.nextInt();
+		System.out.print("Unidades por empaque : ");
+		unidadesPorEmpaque = read.nextInt();
+	}
 	
 	public void mostrar(){
 		System.out.println("------ DATOS PRODUCTO -----"); 
@@ -53,7 +79,41 @@ public class Producto {
 	public String getNombre() {
 		return nombre;
 	}
-	
-	
+
+	public int getCanIngredientes() {
+		return canIngredientes;
+	}
+
+	public Ingrediente[] getIngredientes() {
+		return ingredientes;
+	}
+
+	public int getTiempoProd() {
+		return tiempoProd;
+	}
+
+	public int getUnidadesPorEmpaque() {
+		return unidadesPorEmpaque;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setCanIngredientes(int canIngredientes) {
+		this.canIngredientes = canIngredientes;
+	}
+
+	public void setIngredientes(Ingrediente[] ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+
+	public void setTiempoProd(int tiempoProd) {
+		this.tiempoProd = tiempoProd;
+	}
+
+	public void setUnidadesPorEmpaque(int unidadesPorEmpaque) {
+		this.unidadesPorEmpaque = unidadesPorEmpaque;
+	}
 	
 }

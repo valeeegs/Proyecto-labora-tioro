@@ -1,5 +1,5 @@
 
-public class Confiteria {
+public class Confiteria implements java.io.Serializable{
 	private String nombre;
 	private int NIT;  
 	private double capital;

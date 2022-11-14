@@ -1,5 +1,5 @@
 
-public class Pedido {
+public class Pedido implements java.io.Serializable{
 	private int idpedidos;
 	private int cantidadProd;
 	private String[][] prodComprados = new String[50][3];
@@ -36,10 +36,20 @@ public class Pedido {
 	/* descuento: se calcula un 10% del total de compra, solo aplica a clientes frecuentes.
 	costoTotal: suma de los precios de los productos comprados y se incluye el descuento en caso de que haya. */
 	
-	public double costoTotal() {
+	public double descuento(double compra) {
+		double des = 0;
+		des = compra * 0.10;
+		return des;
+	}
+	
+	public double costoTotal(Cliente c) {
 		double costo = 0;
 			for(int i=0; i<cantidadProd; i++) {
 				costo += Double.parseDouble(prodComprados[i][2]);
+			} if(c.getFrecuencia() > 5) { // descuento por frecuencia
+				costo -= descuento(costo);
+			} if(c.isDejarPropina()) { // si confirmó dejar porpina 
+				costo += costo * 0.15;
 			}
 		return costo;
 	}

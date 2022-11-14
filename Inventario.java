@@ -1,5 +1,5 @@
 
-public class Inventario {
+public class Inventario implements java.io.Serializable{
 	private String fechaActualizacion;
 	private int nroProductos;
 	private int[] cantidad = new int[50];
@@ -39,5 +39,15 @@ public class Inventario {
 			}
 		}
 		return precio;
+	}
+	
+	
+	
+	public void setCantidad(int cantidad, int i) {
+		this.cantidad[i] = cantidad;
+	}
+
+	public void productoModa() {
+		
 	}
 }

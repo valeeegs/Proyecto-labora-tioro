@@ -1,5 +1,5 @@
 
-public class Empleado extends Persona{
+public class Empleado extends Persona implements java.io.Serializable{
 	private int sueldo;
 	private String cargo;
 	
