@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Cliente extends Persona implements java.io.Serializable{
 	private String[] productosPedidos = new String[50];
@@ -10,7 +11,7 @@ public class Cliente extends Persona implements java.io.Serializable{
 		productosPedidos[0] = "a";
 		productosPedidos[1]	= "b";
 	    productosPedidos[2] = "c";
-	    fechaDecompra = "13";
+	    fechaDecompra = "13/02/22";
 	    nroProductos = 3;
 	    frecuencia = 0;
 	    dejarPropina = false;
@@ -56,6 +57,27 @@ public class Cliente extends Persona implements java.io.Serializable{
 	public boolean isDejarPropina() {
 		return dejarPropina;
 	}
-	
-	
+	public void leer() {
+		System.out.println("Ingrese los datos del Cliente");
+		super.leer();
+		Scanner read = new Scanner(System.in);
+		System.out.print("Numero de Productos: ");
+		nroProductos = read.nextInt();
+		System.out.print("Productos Pedidos: ");
+		for(int i=0; i<nroProductos; i++) {
+			(productosPedidos[i]) = read.next();
+		}
+		System.out.print("Fecha de la compra: ");
+		fechaDecompra = read.next();
+	}
+	public void mostrar() {
+		super.mostrar();
+		System.out.println("Productos Pedidos"); 
+		for(int i=0; i<nroProductos; i++) {
+			System.out.println(productosPedidos[i]);
+		}
+		System.out.println("Fecha de compra: " + fechaDecompra);
+		System.out.println("Numero de Productos: " + nroProductos);
+		
+	}
 }

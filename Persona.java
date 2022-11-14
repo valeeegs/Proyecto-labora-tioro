@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Persona {
 	protected String nombre;
@@ -16,10 +17,19 @@ public class Persona {
 		this.edad = edad;
 	}
 	
-	public void mostrar(){
+	public void mostrar() {
 		System.out.println("Nombre: " + nombre);
 		System.out.println("CI: " + ci);
-		System.out.println(nombre + "\t\t" + ci + "\t\t" + edad);
+		System.out.println("Edad: " + edad);
 	}
-	
+	public void leer() {
+		System.out.println("ingrese los datos de la persona");
+		Scanner read =  new Scanner(System.in);
+		System.out.print("Nombre de la persona: ");
+		nombre = read.next();
+		System.out.print("CI: ");
+		ci = read.nextInt();
+		System.out.print("Edad: ");
+		edad = read.nextInt();
+	}
 }
