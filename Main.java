@@ -21,11 +21,10 @@ public class Main {
 		ArchProducto p = new ArchProducto("producto.dat");
 		do {
 			System.out.println("Menú archivo producto");
-			System.out.println("1. Crear \n "
+			System.out.println("1. Crear \n"
 					+ "2. Adicionar \n" 
-					+ "3. Eliminar\n"
-					+ "4. Modificar\n"
-					+ "5. Listar\n");
+					+ "3. Listar\n"
+					+ "4. Salir");
 			System.out.print("Elegir la opción: ");
 			op = read.nextInt();
 			
@@ -34,15 +33,13 @@ public class Main {
 					break;
 			case 2: p.Adicionar();
 					break;
-			case 3: 
-			
-			case 4:
-			
-			case 5: p.Listar();
-				
-			default: System.out.println("No eligió una opción listada en el menú");
+			case 3: p.Listar();
+					break;
+			case 4: System.out.println("Fin del programa");
+					break;
+			default: System.out.println("No eligió una opción listada en el menú\n");
 			}
-		} while(op != 5);
+		} while(op != 4);
 		
 	}
 
