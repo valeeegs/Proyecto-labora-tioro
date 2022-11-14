@@ -63,12 +63,13 @@ public class Cliente extends Persona implements java.io.Serializable{
 		Scanner read = new Scanner(System.in);
 		System.out.print("Numero de Productos: ");
 		nroProductos = read.nextInt();
+		read.nextLine();
 		System.out.print("Productos Pedidos: ");
 		for(int i=0; i<nroProductos; i++) {
-			(productosPedidos[i]) = read.next();
+			(productosPedidos[i]) = read.nextLine();
 		}
 		System.out.print("Fecha de la compra: ");
-		fechaDecompra = read.next();
+		fechaDecompra = read.nextLine();
 	}
 	public void mostrar() {
 		super.mostrar();
