@@ -23,10 +23,9 @@ public class Persona {
 		System.out.println("Edad: " + edad);
 	}
 	public void leer() {
-		System.out.println("ingrese los datos de la persona");
 		Scanner read =  new Scanner(System.in);
-		System.out.print("Nombre de la persona: ");
-		nombre = read.next();
+		System.out.print("Nombre: ");
+		nombre = read.nextLine();
 		System.out.print("CI: ");
 		ci = read.nextInt();
 		System.out.print("Edad: ");
