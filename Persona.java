@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Persona {
+public class Persona implements java.io.Serializable{
 	protected String nombre;
 	protected int ci;
 	protected int edad;
@@ -18,9 +18,9 @@ public class Persona {
 	}
 	
 	public void mostrar() {
-		System.out.println("Nombre: " + nombre);
-		System.out.println("CI: " + ci);
-		System.out.println("Edad: " + edad);
+		System.out.println("\tNombre: " + nombre);
+		System.out.println("\tCI: " + ci);
+		System.out.println("\tEdad: " + edad);
 	}
 	public void leer() {
 		Scanner read =  new Scanner(System.in);
@@ -31,5 +31,18 @@ public class Persona {
 		System.out.print("Edad: ");
 		edad = read.nextInt();
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getCi() {
+		return ci;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+	
 	
 }

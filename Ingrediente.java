@@ -1,5 +1,5 @@
 
-public class Ingrediente {
+public class Ingrediente implements java.io.Serializable{
 	private String nombre;
 	private int cantidad;
 	private double precio;
@@ -17,7 +17,7 @@ public class Ingrediente {
 	}
 	
 	public void mostrar(){
-		System.out.println(nombre + "\t\t" + cantidad + "\t\t" + precio);
+		System.out.println("\t" + nombre + "\t\t" + cantidad + "\t\t" + precio);
 	}
 	
 	// not sure about this

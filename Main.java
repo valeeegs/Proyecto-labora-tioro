@@ -6,7 +6,7 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		Scanner read = new Scanner(System.in);
 		// TODO Auto-generated method stub
-		Producto p1 = new Producto();
+		/*Producto p1 = new Producto();
 		Producto p2 = new Producto();
 		//p2.leer();
 		//p2.mostrar();
@@ -17,32 +17,45 @@ public class Main {
 		//i.mostrar();
 		
 		Confiteria c = new Confiteria();
-		c.mostrar();
+		c.mostrar();*/
 		
 		int op;
-		ArchProducto p = new ArchProducto("producto.dat");
+		ArchConfiteria c = new ArchConfiteria("confiteria.dat");
 		do {
-			System.out.println("Menú archivo producto");
-			System.out.println("1. Crear \n"
-					+ "2. Adicionar \n" 
-					+ "3. Listar\n"
-					+ "4. Salir");
+			System.out.println("\nMenú archivo confiteria");
+			System.out.println("1. CREAR \n"
+					+ "2. ADICIONAR \n"
+					+ "3. AGREGAR CLIENTE \n" 
+					+ "4. LISTAR \n"
+					+ "5. ELIMINAR \n"
+					+ "6. SALIR");
 			System.out.print("Elegir la opción: ");
 			op = read.nextInt();
 			read.nextLine();
 			
 			switch(op) {
-			case 1: p.Crear();
+			case 1: c.Crear();
 					break;
-			case 2: p.Adicionar();
+			case 2: Confiteria con = new Confiteria();
+					c.Adicionar(con);
 					break;
-			case 3: p.Listar();
+			case 3: System.out.println("Ingrese el nombre de la confitería a agregar el cliente");
+					String nomC = read.nextLine();
+					Cliente cliente = new Cliente();
+					cliente.leer();
+					c.addCliente(nomC, cliente);
 					break;
-			case 4: System.out.println("Fin del programa");
+			case 4: c.Listar();
+					break;
+			case 5: System.out.println("Ingrese el nombre de la confitería a eliminar");
+					String name = read.nextLine();
+					c.Eliminar(name);
+				
+			case 6: System.out.println("Fin del programa");
 					break;
 			default: System.out.println("No eligió una opción listada en el menú\n");
 			}
-		} while(op != 4);
+		} while(op != 6);
 		
 	}
 

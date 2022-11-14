@@ -28,6 +28,7 @@ public class Producto implements java.io.Serializable{
 		nombre = read.nextLine();
 		System.out.print("Cantidad de ingredientes: ");
 		canIngredientes = read.nextInt();
+		read.nextLine();
 		for(int i=0; i<canIngredientes; i++) {
 			System.out.println("Ingrese los datos del ingrediente nro " + (i+1) + ": ");
 			System.out.print("Nombre: ");
@@ -37,23 +38,26 @@ public class Producto implements java.io.Serializable{
 			System.out.print("Precio: ");
 			p = read.nextDouble();
 			ingredientes[i] = new Ingrediente(n, c, p);
+			read.nextLine();
 		}
 		System.out.print("Tiempo producción: ");
 		tiempoProd = read.nextInt();
+		read.nextLine();
 		System.out.print("Unidades por empaque : ");
 		unidadesPorEmpaque = read.nextInt();
+		read.nextLine();
 	}
 	
 	public void mostrar(){
 		System.out.println("------ DATOS PRODUCTO -----"); 
-		System.out.println("Nombre: " + nombre); 
-		System.out.println("Cantidad Ingredientes: " + canIngredientes); 
-		System.out.println("NOMBRE \t\tCANTIDAD \tPRECIO"); 
+		System.out.println("\tNombre: " + nombre); 
+		System.out.println("\tCantidad Ingredientes: " + canIngredientes); 
+		System.out.println("\tNOMBRE \t\tCANTIDAD \tPRECIO"); 
 		for(int i=0; i<canIngredientes; i++) {
 			ingredientes[i].mostrar();
 		}
-		System.out.println("Tiempo prod: " + tiempoProd); 
-		System.out.println("Unidades x Empaque: " + unidadesPorEmpaque); 
+		System.out.println("\tTiempo prod: " + tiempoProd); 
+		System.out.println("\tUnidades x Empaque: " + unidadesPorEmpaque); 
 		System.out.println("----------------------------"); 
 	}
 

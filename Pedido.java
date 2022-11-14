@@ -29,7 +29,7 @@ public class Pedido implements java.io.Serializable{
 	public void mostrar(){
 		System.out.println(idpedidos + cantidadProd);
 		for(int i=0; i<cantidadProd; i++) {
-			System.out.println(prodComprados[i][0] + "\t" + prodComprados[i][1] + "\t" + prodComprados[i][2] + "\t");
+			System.out.println("\t" + prodComprados[i][0] + "\t" + prodComprados[i][1] + "\t" + prodComprados[i][2] + "\t");
 		}
 	}
 	// use cases to compare and add the price of each product 

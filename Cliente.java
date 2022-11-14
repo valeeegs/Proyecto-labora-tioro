@@ -32,14 +32,15 @@ public class Cliente extends Persona implements java.io.Serializable{
 		fechaDecompra = read.nextLine();
 	}
 	public void mostrar() {
+		System.out.println("\t------- DATOS CLIENTE -------");
 		super.mostrar();
-		System.out.println("Productos Pedidos"); 
+		System.out.println("\tNumero de Productos: " + nroProductos);
+		System.out.println("\tProductos Pedidos"); 
 		for(int i=0; i<nroProductos; i++) {
-			System.out.println(productosPedidos[i]);
+			System.out.println("\t\t" + productosPedidos[i]);
 		}
-		System.out.println("Fecha de compra: " + fechaDecompra);
-		System.out.println("Numero de Productos: " + nroProductos);
-		
+		System.out.println("\tFecha de compra: " + fechaDecompra);
+		System.out.println("\t-----------------------------");
 	}
 	
 	/* propina: si el cliente le agrada el trato, gratifica al lugar.

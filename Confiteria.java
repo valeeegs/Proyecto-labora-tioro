@@ -3,6 +3,8 @@ public class Confiteria implements java.io.Serializable{
 	private String nombre;
 	private int NIT;  
 	private double capital;
+	private int nroProductos;
+	private Producto[] productos = new Producto[50];
 	private int nroEmpleados;  
 	private Empleado[] empleados = new Empleado[50];
 	private int nroClientes;
@@ -15,9 +17,11 @@ public class Confiteria implements java.io.Serializable{
 		 nombre = "Twice";
 		 NIT  = 513215;
 		 capital  = 80000.50;
-		 nroEmpleados  = 2;
+		 nroEmpleados  = 1;
 		 empleados[0] = new Empleado();
-		 empleados[1] = new Empleado();
+		 nroProductos = 1;
+		 productos[0] = new Producto();
+		 //empleados[1] = new Empleado();
 		 nroClientes = 0;
 		 inventario = new Inventario();
 		 nroPedidos = 0; 
@@ -72,4 +76,52 @@ public class Confiteria implements java.io.Serializable{
 		}
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getNIT() {
+		return NIT;
+	}
+
+	public double getCapital() {
+		return capital;
+	}
+
+	public int getNroProductos() {
+		return nroProductos;
+	}
+
+	public Producto[] getProductos() {
+		return productos;
+	}
+
+	public int getNroEmpleados() {
+		return nroEmpleados;
+	}
+
+	public Empleado[] getEmpleados() {
+		return empleados;
+	}
+
+	public int getNroClientes() {
+		return nroClientes;
+	}
+
+	public Cliente[] getClientes() {
+		return clientes;
+	}
+
+	public Inventario getInventario() {
+		return inventario;
+	}
+
+	public int getNroPedidos() {
+		return nroPedidos;
+	}
+
+	public Pedido[] getPedidos() {
+		return pedidos;
+	}
+	
 }
