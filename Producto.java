@@ -17,17 +17,6 @@ public class Producto implements java.io.Serializable{
 		tiempoProd = 60;
 		unidadesPorEmpaque = 4;
 	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		
-	}
 	
 	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
 			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
@@ -41,87 +30,6 @@ public class Producto implements java.io.Serializable{
 		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
 		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
 	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
-			String in4, int ic4, double ip4, String in5, int ic5, double ip5) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
-		ingredientes[4] = new Ingrediente(in5, ic5, ip5);
-	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
-			String in4, int ic4, double ip4, String in5, int ic5, double ip5, String in6, int ic6, double ip6) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
-		ingredientes[4] = new Ingrediente(in5, ic5, ip5);
-		ingredientes[5] = new Ingrediente(in6, ic6, ip6);
-	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
-			String in4, int ic4, double ip4, String in5, int ic5, double ip5,
-			String in6, int ic6, double ip6, String in7, int ic7, double ip7) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
-		ingredientes[4] = new Ingrediente(in5, ic5, ip5);
-		ingredientes[5] = new Ingrediente(in6, ic6, ip6);
-		ingredientes[6] = new Ingrediente(in7, ic7, ip7);
-	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
-			String in4, int ic4, double ip4, String in5, int ic5, double ip5,
-			String in6, int ic6, double ip6, String in7, int ic7, double ip7,
-			String in8, int ic8, double ip8) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
-		ingredientes[4] = new Ingrediente(in5, ic5, ip5);
-		ingredientes[5] = new Ingrediente(in6, ic6, ip6);
-		ingredientes[6] = new Ingrediente(in7, ic7, ip7);
-		ingredientes[7] = new Ingrediente(in8, ic8, ip8);
-	}
-	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
-			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
-			String in4, int ic4, double ip4, String in5, int ic5, double ip5,
-			String in6, int ic6, double ip6, String in7, int ic7, double ip7,
-			String in8, int ic8, double ip8, String in9, int ic9, double ip9) {
-		nombre = n;
-		canIngredientes = c;
-		tiempoProd = t;
-		unidadesPorEmpaque = u;
-		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
-		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
-		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
-		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
-		ingredientes[4] = new Ingrediente(in5, ic5, ip5);
-		ingredientes[5] = new Ingrediente(in6, ic6, ip6);
-		ingredientes[6] = new Ingrediente(in7, ic7, ip7);
-		ingredientes[7] = new Ingrediente(in8, ic8, ip8);
-		ingredientes[8] = new Ingrediente(in9, ic9, ip9);
-	}
-	
 	
 	/*Scanner read =  new Scanner(System.in);
 		System.out.print(": ");

@@ -30,9 +30,9 @@ public class Pedido implements java.io.Serializable{
 		cantidadProd = read.nextInt();
 		read.nextLine();
 		for(int i=0; i<cantidadProd; i++) {
-			System.out.print("Nombre producto " + (i+1));
+			System.out.print("Nombre producto: " + (i+1));
 			prodComprados[i][0] = read.nextLine();
-			System.out.print("Cantidad producto " + (i+1));
+			System.out.print("Cantidad producto: " + (i+1));
 			prodComprados[i][1] = read.nextLine();
 		}
 	}
@@ -45,11 +45,16 @@ public class Pedido implements java.io.Serializable{
 		}
 	}
 	
-	public void mostrar(){
-		System.out.println(idpedidos + cantidadProd);
+	public void mostrar(Inventario inv){
+		ponerPrecio(inv);
+		System.out.println("\t------ DATOS PEDIDO ------");
+		System.out.println("\tID: " + idpedidos);
+		System.out.println("\tCantidad de productos: " + cantidadProd);
+		System.out.println("\tNOMBRE \tCANTIDAD \tPRECIO");
 		for(int i=0; i<cantidadProd; i++) {
 			System.out.println("\t" + prodComprados[i][0] + "\t" + prodComprados[i][1] + "\t" + precioProd[i] + "\t");
 		}
+		System.out.println("\t--------------------------");
 	}
 	// use cases to compare and add the price of each product 
 	/* descuento: se calcula un 10% del total de compra, solo aplica a clientes frecuentes.
