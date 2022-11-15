@@ -32,7 +32,7 @@ public class ArchProducto {
 			
 			do{
 				rgProducto = new Producto();
-				rgProducto.leer();
+				rgProducto.read();
 				aProducto.writeObject(rgProducto);
 				System.out.println("Desea cont s/n");
 				op = read.next();

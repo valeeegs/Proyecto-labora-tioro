@@ -28,9 +28,14 @@ public class Confiteria implements java.io.Serializable{
 	}
 	
 	public void mostrar() {
+		System.out.println("///////// DATOS CONFITERIA /////////");
 		System.out.println("Nombre: " + nombre);
 		System.out.println("NIT: " + NIT);
 		System.out.println("Capital: " + capital);
+		System.out.println("Cantidad de productos producidos: " + nroProductos);
+		for(int i=0; i<nroProductos; i++) {
+			productos[i].mostrar();
+		}
 		System.out.println("Nro Empleados: " + nroEmpleados);
 		for(int i=0; i<nroEmpleados; i++) {
 			empleados[i].mostrar();
@@ -43,7 +48,7 @@ public class Confiteria implements java.io.Serializable{
 		for(int i=0; i<nroPedidos; i++) {
 			pedidos[i].mostrar();
 		}
-		System.out.println();
+		System.out.println("////////////////////////////////////\n");
 		
 	}
 	
@@ -65,14 +70,26 @@ public class Confiteria implements java.io.Serializable{
 		return total;
 	}
 	
-	public void ganaciasTotales() {
-		if(totalSueldos() < capital) {
+	public boolean inicioMes(String fecha) {
+		int dia = Integer.parseInt(fecha.substring(0,2));
+		if(dia < 9) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void pagoSueldos(String fecha) {
+		if(inicioMes(fecha)) {
+			System.out.println("Total de pagar en sueldos: " + totalSueldos());
 			for(int i=0; i<nroEmpleados; i++) {
 				if(empleados[i].isSueldoPagado() == false) {
 					empleados[i].pagarSueldo();
+					System.out.println("Se pagaron los sueldos");
 				}
 			}
 			capital -= totalSueldos();
+		}else {
+			System.out.println("Solo se puede pagar sueldos a inicio de mes");
 		}
 	}
 

@@ -104,5 +104,29 @@ public class ArchConfiteria {
             f2.renameTo(f1);
         }
     }
+    
+    public void pagarSueldos(String fecha) throws IOException {
+    	ObjectInputStream archAvi = null;
+        ObjectOutputStream archAvi2 = null;
+        try {
+            archAvi = new ObjectInputStream(new FileInputStream(nomArch));
+            archAvi2 = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
+            while (true) {
+                regConf = new Confiteria();
+                regConf = (Confiteria) archAvi.readObject();
+                regConf.pagoSueldos(fecha);
+                archAvi2.writeObject(regConf);
+            }
+        } catch (Exception e) {
+            System.out.println("------------------------------");
+        } finally {
+            archAvi.close();
+            archAvi2.close();
+            File f1 = new File(nomArch);
+            f1.delete();
+            File f2 = new File("copia.dat");
+            f2.renameTo(f1);
+        }
+    }
 
 }

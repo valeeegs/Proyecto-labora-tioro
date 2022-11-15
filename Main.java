@@ -27,8 +27,9 @@ public class Main {
 					+ "2. ADICIONAR \n"
 					+ "3. AGREGAR CLIENTE \n" 
 					+ "4. LISTAR \n"
-					+ "5. ELIMINAR \n"
-					+ "6. SALIR");
+					+ "5. PAGAR SUELDOS \n"
+					+ "6. ELIMINAR CONFITERIA \n"
+					+ "7. SALIR");
 			System.out.print("Elegir la opción: ");
 			op = read.nextInt();
 			read.nextLine();
@@ -47,15 +48,19 @@ public class Main {
 					break;
 			case 4: c.Listar();
 					break;
-			case 5: System.out.println("Ingrese el nombre de la confitería a eliminar");
+			case 5: System.out.println("Ingrese la fecha actual en formato DD/MM/AA");
+					String fecha = read.nextLine();
+					c.pagarSueldos(fecha);
+					break;
+			case 6: System.out.println("Ingrese el nombre de la confitería a eliminar");
 					String name = read.nextLine();
 					c.Eliminar(name);
-				
-			case 6: System.out.println("Fin del programa");
 					break;
-			default: System.out.println("No eligió una opción listada en el menú\n");
+			case 7: System.out.println("Fin del programa");
+					break;
+			default: System.out.println("No eligió una opción listada en el menú");
 			}
-		} while(op != 6);
+		} while(op != 7);
 		
 	}
 

@@ -8,18 +8,27 @@ public class Producto implements java.io.Serializable{
 	private int unidadesPorEmpaque;
 	
 	public Producto(){
-		nombre = "Baek";
-		canIngredientes = 3;
-		ingredientes[0] = new Ingrediente();
-		ingredientes[1] = new Ingrediente();
-		ingredientes[2] = new Ingrediente();
-		tiempoProd = 3;
-		unidadesPorEmpaque = 3;
+		nombre = "Ositos de goma";
+		canIngredientes = 4;
+		ingredientes[0] = new Ingrediente("Grenetina en polvo",	180, 3.99);
+		ingredientes[1] = new Ingrediente("Gelatina en polvo",	300,	5.49);
+		ingredientes[2] = new Ingrediente("Jugo de limon",	90,	1.59);
+		ingredientes[3] = new Ingrediente("agua",	2800,	2.80);
+		tiempoProd = 60;
+		unidadesPorEmpaque = 4;
+	}
+	
+	public Producto(String n, int c, int t, int u) {
+		nombre = n;
+		canIngredientes = c;
+		tiempoProd = t;
+		unidadesPorEmpaque = u;
+		
 	}
 	
 	/*Scanner read =  new Scanner(System.in);
 		System.out.print(": ");
-		= read.next();*/
+		= read.next();
 	public void leer() {
 		String n; int c; double p;
 		System.out.println("Ingrese los datos del producto");
@@ -46,10 +55,10 @@ public class Producto implements java.io.Serializable{
 		System.out.print("Unidades por empaque : ");
 		unidadesPorEmpaque = read.nextInt();
 		read.nextLine();
-	}
+	}*/
 	
 	public void mostrar(){
-		System.out.println("------ DATOS PRODUCTO -----"); 
+		System.out.println("\t******* DATOS PRODUCTO *******"); 
 		System.out.println("\tNombre: " + nombre); 
 		System.out.println("\tCantidad Ingredientes: " + canIngredientes); 
 		System.out.println("\tNOMBRE \t\tCANTIDAD \tPRECIO"); 
@@ -58,7 +67,7 @@ public class Producto implements java.io.Serializable{
 		}
 		System.out.println("\tTiempo prod: " + tiempoProd); 
 		System.out.println("\tUnidades x Empaque: " + unidadesPorEmpaque); 
-		System.out.println("----------------------------"); 
+		System.out.println("\t******************************"); 
 	}
 
 	

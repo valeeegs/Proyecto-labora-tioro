@@ -11,13 +11,14 @@ public class Inventario implements java.io.Serializable{
 	}
 	
 	public void mostrar() {
-		System.out.println("Fecha: " + fechaActualizacion);
-		System.out.println("Nro Productos: " + nroProductos);
-		System.out.println("NOMBRE \t CANTIDAD DISPONIBLE");
+		System.out.println("\t--------- DATOS INVENTARIO ---------");
+		System.out.println("\tFecha: " + fechaActualizacion);
+		System.out.println("\tNro Productos: " + nroProductos);
+		System.out.println("\tNOMBRE \t CANTIDAD DISPONIBLE");
 		for(int i=0; i<nroProductos; i++){
-			System.out.println(productos[i].getNombre() + "\t\t" + cantidad[i]);
+			System.out.println("\t" + productos[i].getNombre() + "\t\t" + cantidad[i]);
 		}
-		
+		System.out.println("\t-------------------------------------");
 	}
 	
 	public void agregarProducto(Producto p, int cantidad) {
