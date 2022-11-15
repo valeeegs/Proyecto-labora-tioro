@@ -48,9 +48,18 @@ public class Confiteria implements java.io.Serializable{
 		 productos[8] = new Producto("Brownie de chocolate", 6,60,10,"margarina", 260, 4.99,"chocolate bitter", 160, 5.59,
 				 "azúcar", 480, 4.39,"huevos",	5,	3.49,"harina",	260,	2.59,"azúcar en polvo",	100,	1.89);
 		 productos[9] = new Producto();
-		 //empleados[1] = new Empleado();
 		 nroClientes = 0;
 		 inventario = new Inventario();
+		 inventario.agregarProducto(productos[0]);
+		 inventario.agregarProducto(productos[1]);
+		 inventario.agregarProducto(productos[2]);
+		 inventario.agregarProducto(productos[3]);
+		 inventario.agregarProducto(productos[4]);
+		 inventario.agregarProducto(productos[5]);
+		 inventario.agregarProducto(productos[6]);
+		 inventario.agregarProducto(productos[7]);
+		 inventario.agregarProducto(productos[8]);
+		 inventario.agregarProducto(productos[9]);
 		 nroPedidos = 0; 
 	}
 	
@@ -76,7 +85,6 @@ public class Confiteria implements java.io.Serializable{
 			pedidos[i].mostrar(inventario);
 		}
 		System.out.println("////////////////////////////////////\n");
-		
 	}
 	
 	public void agregarCliente(Cliente c) {
@@ -120,7 +128,14 @@ public class Confiteria implements java.io.Serializable{
 		}
 	}
 	
-	
+	public boolean verficarCliente(String name) {
+		for(int i=0; i<nroClientes; i++) {
+			if(clientes[i].getNombre().equals(name)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public String getNombre() {
 		return nombre;

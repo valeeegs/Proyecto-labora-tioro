@@ -21,10 +21,29 @@ public class Inventario implements java.io.Serializable{
 		System.out.println("\t-------------------------------------");
 	}
 	
-	public void agregarProducto(Producto p, int cantidad) {
+	public void agregarProducto(Producto p) {
 		productos[nroProductos] = p;
-		this.cantidad[nroProductos] = cantidad;
+		//this.cantidad[nroProductos] = cantidad;
 		nroProductos ++;
+	}
+	
+	public int verificarProd(String name) {
+		int pos = -1;
+		for(int i=0; i<nroProductos; i++) {
+			if(productos[i].getNombre().equals(name)) {
+				pos = i;
+				return pos;
+			}
+		}
+		return pos;
+	}
+	
+	public void agregarCantidad(String name, int cantidad) {
+		if(verificarProd(name) >= 0) {
+			this.cantidad[verificarProd(name)] += cantidad;
+		}else {
+			System.out.println("El producto no está registrado!!! Intente de nuevo");
+		}
 	}
 	
 	/* productoModa: producto más vendido.
@@ -41,8 +60,6 @@ public class Inventario implements java.io.Serializable{
 		}
 		return precio;
 	}
-	
-	
 	
 	public void setCantidad(int cantidad, int i) {
 		this.cantidad[i] = cantidad;

@@ -79,7 +79,49 @@ public class ArchConfiteria {
         }
     }
     
-    public void addCliente(/*String nomC,*/ Cliente c) throws IOException {
+    public void ProductosConf() throws IOException {
+        ObjectInputStream archConf = null;
+        try {
+            archConf = new ObjectInputStream(new FileInputStream(nomArch));
+            while (true) {
+                regConf = (Confiteria) archConf.readObject();
+                for(int i=0; i<regConf.getNroProductos(); i++) {
+                	System.out.println("\t" + regConf.getProductos()[i].getNombre());
+                }
+            }
+        } catch (Exception e) {
+            System.out.println();
+        } finally {
+            archConf.close();
+        }
+    }
+    
+    public void InventarioAd(String name, int cantidad) throws IOException {
+    	ObjectInputStream archAvi = null;
+        ObjectOutputStream archAvi2 = null;
+        try {
+            archAvi = new ObjectInputStream(new FileInputStream(nomArch));
+            archAvi2 = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
+            while (true) {
+                regConf = new Confiteria();
+                regConf = (Confiteria) archAvi.readObject();
+                regConf.getInventario().agregarCantidad(name, cantidad);
+                archAvi2.writeObject(regConf);
+                regConf.getInventario().mostrar(); //DELETETHISLATER
+            }
+        } catch (Exception e) {
+            System.out.println("------ ------");
+        } finally {
+            archAvi.close();
+            archAvi2.close();
+            File f1 = new File(nomArch);
+            f1.delete();
+            File f2 = new File("copia.dat");
+            f2.renameTo(f1);
+        }
+    }
+    
+    public void addCliente(Cliente c) throws IOException {
     	ObjectInputStream archAvi = null;
         ObjectOutputStream archAvi2 = null;
         try {
@@ -106,7 +148,7 @@ public class ArchConfiteria {
     }
     
     //////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    public void addPedido(/*String nomC,*/ Pedido p) throws IOException {
+    public void addPedido(Cliente c, Pedido p) throws IOException {
     	ObjectInputStream archAvi = null;
         ObjectOutputStream archAvi2 = null;
         try {
@@ -121,6 +163,35 @@ public class ArchConfiteria {
             }
         } catch (Exception e) {
             System.out.println("---- Pedido agregado ----");
+        } finally {
+            archAvi.close();
+            archAvi2.close();
+            File f1 = new File(nomArch);
+            f1.delete();
+            File f2 = new File("copia.dat");
+            f2.renameTo(f1);
+        }
+    }
+    
+    public void addPedidoAntiguo(String name, Pedido p) throws IOException {
+    	ObjectInputStream archAvi = null;
+        ObjectOutputStream archAvi2 = null;
+        try {
+            archAvi = new ObjectInputStream(new FileInputStream(nomArch));
+            archAvi2 = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
+            while (true) {
+                regConf = new Confiteria();
+                regConf = (Confiteria) archAvi.readObject();
+                if(regConf.verficarCliente(name)) {
+                	regConf.agregarPedido(p);
+                }else {
+                	System.out.println("El cliente no está registrado, intente de nuevo");
+                }
+                archAvi2.writeObject(regConf);
+                // revisar p.costoTotal(c)
+            }
+        } catch (Exception e) {
+            System.out.println("----  ----");
         } finally {
             archAvi.close();
             archAvi2.close();

@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Pedido implements java.io.Serializable{
 	private int idpedidos;
+	private String fechaDecompra;
 	private int cantidadProd;
 	private String[][] prodComprados = new String[50][2];
 	private double[] precioProd = new double[50];
@@ -26,13 +27,15 @@ public class Pedido implements java.io.Serializable{
 		System.out.print("ID: ");
 		idpedidos = read.nextInt();
 		read.nextLine();
+		System.out.print("Fecha de la compra: ");
+		fechaDecompra = read.nextLine();
 		System.out.print("Cantidad de productos: ");
 		cantidadProd = read.nextInt();
 		read.nextLine();
 		for(int i=0; i<cantidadProd; i++) {
-			System.out.print("Nombre producto: " + (i+1));
+			System.out.print("Nombre producto " + (i+1) + ": ");
 			prodComprados[i][0] = read.nextLine();
-			System.out.print("Cantidad producto: " + (i+1));
+			System.out.print("Cantidad producto " + (i+1) + ": ");
 			prodComprados[i][1] = read.nextLine();
 		}
 	}
@@ -49,11 +52,13 @@ public class Pedido implements java.io.Serializable{
 		ponerPrecio(inv);
 		System.out.println("\t------ DATOS PEDIDO ------");
 		System.out.println("\tID: " + idpedidos);
+		System.out.println("\tFecha de compra: " + fechaDecompra);
 		System.out.println("\tCantidad de productos: " + cantidadProd);
 		System.out.println("\tNOMBRE \tCANTIDAD \tPRECIO");
 		for(int i=0; i<cantidadProd; i++) {
 			System.out.println("\t" + prodComprados[i][0] + "\t" + prodComprados[i][1] + "\t" + precioProd[i] + "\t");
 		}
+		System.out.println();
 		System.out.println("\t--------------------------");
 	}
 	// use cases to compare and add the price of each product 
@@ -67,6 +72,7 @@ public class Pedido implements java.io.Serializable{
 	}
 	
 	public double costoTotal(Cliente c) {
+		c.Pedido(idpedidos);
 		double costo = 0;
 			for(int i=0; i<cantidadProd; i++) {
 				costo += precioProd[i];
@@ -75,6 +81,7 @@ public class Pedido implements java.io.Serializable{
 			} if(c.isDejarPropina()) { // si confirmó dejar porpina 
 				costo += costo * 0.15;
 			}
+		System.out.println("Costo total del pedido: " + costo);
 		return costo;
 	}
 }
