@@ -122,7 +122,6 @@ public class Producto implements java.io.Serializable{
 		ingredientes[8] = new Ingrediente(in9, ic9, ip9);
 	}
 	
-	
 	/*Scanner read =  new Scanner(System.in);
 		System.out.print(": ");
 		= read.next();

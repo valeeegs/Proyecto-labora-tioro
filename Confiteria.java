@@ -73,7 +73,7 @@ public class Confiteria implements java.io.Serializable{
 		}
 		System.out.println("Nro Pedidos: " + nroPedidos);
 		for(int i=0; i<nroPedidos; i++) {
-			pedidos[i].mostrar();
+			pedidos[i].mostrar(inventario);
 		}
 		System.out.println("////////////////////////////////////\n");
 		
@@ -119,6 +119,8 @@ public class Confiteria implements java.io.Serializable{
 			System.out.println("Solo se puede pagar sueldos a inicio de mes");
 		}
 	}
+	
+	
 
 	public String getNombre() {
 		return nombre;
