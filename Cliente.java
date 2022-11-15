@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 public class Cliente extends Persona implements java.io.Serializable{
-	private String[] productosPedidos = new String[50];
+	private String[] idPedidos = new String[50];
 	private String fechaDecompra;
-	private int nroProductos;
+	private int nroPedidos;
 	private int frecuencia;
 	private boolean dejarPropina = false;
 	
 	public Cliente() {
-		productosPedidos[0] = "a";
-		productosPedidos[1]	= "b";
-	    productosPedidos[2] = "c";
+		idPedidos[0] = "a";
+		idPedidos[1] = "b";
+	    idPedidos[2] = "c";
 	    fechaDecompra = "13";
-	    nroProductos = 3;
+	    nroPedidos = 3;
 	    frecuencia = 0;
 	    dejarPropina = false;
 	}
@@ -21,12 +21,12 @@ public class Cliente extends Persona implements java.io.Serializable{
 		System.out.println("Ingrese los datos del Cliente");
 		super.leer();
 		Scanner read = new Scanner(System.in);
-		System.out.print("Numero de Productos: ");
-		nroProductos = read.nextInt();
+		System.out.print("Numero de Pedidos: ");
+		nroPedidos = read.nextInt();
 		read.nextLine();
-		System.out.print("Productos Pedidos: ");
-		for(int i=0; i<nroProductos; i++) {
-			(productosPedidos[i]) = read.nextLine();
+		System.out.print("Codigo de Pedidos: ");
+		for(int i=0; i<nroPedidos; i++) {
+			(idPedidos[i]) = read.nextLine();
 		}
 		System.out.print("Fecha de la compra: ");
 		fechaDecompra = read.nextLine();
@@ -34,10 +34,10 @@ public class Cliente extends Persona implements java.io.Serializable{
 	public void mostrar() {
 		System.out.println("\t------- DATOS CLIENTE -------");
 		super.mostrar();
-		System.out.println("\tNumero de Productos: " + nroProductos);
-		System.out.println("\tProductos Pedidos"); 
-		for(int i=0; i<nroProductos; i++) {
-			System.out.println("\t\t" + productosPedidos[i]);
+		System.out.println("\tNumero de Pedidos: " + nroPedidos);
+		System.out.println("\tID Pedidos hechos: "); 
+		for(int i=0; i<nroPedidos; i++) {
+			System.out.println("\t\t" + idPedidos[i]);
 		}
 		System.out.println("\tFecha de compra: " + fechaDecompra);
 		System.out.println("\t-----------------------------");
@@ -64,16 +64,16 @@ public class Cliente extends Persona implements java.io.Serializable{
 		return frecuencia ++;
 	}
 
-	public String[] getProductosPedidos() {
-		return productosPedidos;
+	public String[] getIdPedidos() {
+		return idPedidos;
 	}
 
 	public String getFechaDecompra() {
 		return fechaDecompra;
 	}
 
-	public int getNroProductos() {
-		return nroProductos;
+	public int getNroPedidos() {
+		return nroPedidos;
 	}
 
 	public int getFrecuencia() {
