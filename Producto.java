@@ -18,12 +18,17 @@ public class Producto implements java.io.Serializable{
 		unidadesPorEmpaque = 4;
 	}
 	
-	public Producto(String n, int c, int t, int u) {
+	public Producto(String n, int c, int t, int u, String in1, int ic1, double ip1, 
+			String in2, int ic2, double ip2, String in3, int ic3, double ip3, 
+			String in4, int ic4, double ip4) {
 		nombre = n;
 		canIngredientes = c;
 		tiempoProd = t;
 		unidadesPorEmpaque = u;
-		
+		ingredientes[0] = new Ingrediente(in1, ic1, ip1);
+		ingredientes[1] = new Ingrediente(in2, ic2, ip2);
+		ingredientes[2] = new Ingrediente(in3, ic3, ip3);
+		ingredientes[3] = new Ingrediente(in4, ic4, ip4);
 	}
 	
 	/*Scanner read =  new Scanner(System.in);
