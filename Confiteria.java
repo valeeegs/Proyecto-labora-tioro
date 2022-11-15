@@ -17,8 +17,12 @@ public class Confiteria implements java.io.Serializable{
 		 nombre = "Twice";
 		 NIT  = 513215;
 		 capital  = 80000.50;
-		 nroEmpleados  = 1;
-		 empleados[0] = new Empleado();
+		 nroEmpleados  = 5;
+		 empleados[0] = new Empleado("Eliana Nina Condori", 11235813, 20, 3000, "Cajera");
+		 empleados[1] = new Empleado("Favio Carbajal Apaza", 23571113, 29, 3500, "Recursos Humanos");
+		 empleados[2] = new Empleado("Dario Quispe Mamani",	78975691, 27, 3200,	"Pastelero");
+		 empleados[3] = new Empleado("Rose Siñani Valencia", 59873147, 22, 3100, "Empacadora");
+		 empleados[4] = new Empleado("Benito Martínez Ocasio", 63598374, 28, 3250, "Chef");
 		 nroProductos = 1;
 		 productos[0] = new Producto();
 		 //empleados[1] = new Empleado();
