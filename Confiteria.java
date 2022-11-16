@@ -104,7 +104,7 @@ public class Confiteria implements java.io.Serializable{
 				}
 			}
 		} capital += ganancia;
-		
+		System.out.println("Los ingresos descontando los gastos son: " + (ganancia - gasto));
 		return ganancia - gasto;
 	}
 	
@@ -116,6 +116,11 @@ public class Confiteria implements java.io.Serializable{
 	public void agregarPedido(Pedido p) {
 		pedidos[nroPedidos] = p;
 		nroPedidos++;
+		for(int i=0; i<nroProductos; i++) {
+			for(int j=0; j<p.getCantidadProd(); j++) { //quita del inventario los productos vendidos
+				inventario.agregarCantidad(p.getProdComprados()[j][0], (-1 * Integer.parseInt(p.getProdComprados()[j][1])));
+			}
+		}
 	}
 	
 	public double totalSueldos() {
