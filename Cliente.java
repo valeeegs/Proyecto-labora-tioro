@@ -52,7 +52,7 @@ public class Cliente extends Persona implements java.io.Serializable{
 		} return false;
 	}
 	
-	public void Pedido(int id) {
+	public void PedidoHecho(int id) {
 		frecuencia ++;
 		idPedidos[nroPedidos] = id;
 		nroPedidos ++;

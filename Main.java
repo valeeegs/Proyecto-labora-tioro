@@ -65,9 +65,9 @@ public class Main {
 								read.nextLine();
 								switch(opPropina) {
 									case 1: ncliente.propina(true);
-											//break; //sus
+											break; //sus
 									case 2: ncliente.propina(false);
-											//break;
+											break;
 								}
 								pedido.costoTotal(ncliente);
 								break;

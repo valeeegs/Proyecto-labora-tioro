@@ -87,6 +87,27 @@ public class Confiteria implements java.io.Serializable{
 		System.out.println("////////////////////////////////////\n");
 	}
 	
+	public double gananciasTotales() {
+		double gasto = 0, ganancia = 0;
+		//gasto en compra de ingredientes
+		for(int i=0; i<nroProductos; i++) {
+			gasto += productos[i].costeProduccion() * inventario.getCantidad()[i];
+		} capital -= gasto;
+		//ganancias por ventas de pedidos
+		for(int i=0; i<nroClientes; i++) {
+			for(int j=0; j<clientes[i].getNroPedidos(); j++) {
+				for(int p=0; p<nroPedidos; p++){
+					if(pedidos[p].getIdpedidos() == clientes[i].getIdPedidos()[j]) {
+						ganancia += pedidos[p].costoTotal(clientes[i]);
+						break;
+					}
+				}
+			}
+		} capital += ganancia;
+		
+		return ganancia - gasto;
+	}
+	
 	public void agregarCliente(Cliente c) {
 		clientes[nroClientes] = c;
 		nroClientes ++;

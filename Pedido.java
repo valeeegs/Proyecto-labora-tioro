@@ -72,7 +72,7 @@ public class Pedido implements java.io.Serializable{
 	}
 	
 	public double costoTotal(Cliente c) {
-		c.Pedido(idpedidos);
+		c.PedidoHecho(idpedidos);
 		double costo = 0;
 			for(int i=0; i<cantidadProd; i++) {
 				costo += precioProd[i];
@@ -83,5 +83,25 @@ public class Pedido implements java.io.Serializable{
 			}
 		System.out.println("Costo total del pedido: " + costo);
 		return costo;
+	}
+
+	public int getIdpedidos() {
+		return idpedidos;
+	}
+
+	public String getFechaDecompra() {
+		return fechaDecompra;
+	}
+
+	public int getCantidadProd() {
+		return cantidadProd;
+	}
+
+	public String[][] getProdComprados() {
+		return prodComprados;
+	}
+
+	public double[] getPrecioProd() {
+		return precioProd;
 	}
 }
