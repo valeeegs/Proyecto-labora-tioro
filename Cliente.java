@@ -12,6 +12,13 @@ public class Cliente extends Persona implements java.io.Serializable{
 	    dejarPropina = false;
 	}
 	
+	public Cliente(String nombre, int ci, int edad) {
+		super(nombre, ci, edad);
+		nroPedidos = 0;
+	    frecuencia = 0;
+	    dejarPropina = false;
+	}
+	
 	public void leer() {
 		System.out.println("Ingrese los datos del Cliente");
 		super.leer();
