@@ -147,7 +147,6 @@ public class ArchConfiteria {
         }
     }
     
-    //////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     public void addPedido(Cliente c, Pedido p) throws IOException {
     	ObjectInputStream archAvi = null;
         ObjectOutputStream archAvi2 = null;
@@ -159,7 +158,6 @@ public class ArchConfiteria {
                 regConf = (Confiteria) archAvi.readObject();
                 regConf.agregarPedido(p);
                 archAvi2.writeObject(regConf);
-                // revisar p.costoTotal(c)
             }
         } catch (Exception e) {
             System.out.println("---- Pedido agregado ----");
@@ -199,6 +197,21 @@ public class ArchConfiteria {
             f1.delete();
             File f2 = new File("copia.dat");
             f2.renameTo(f1);
+        }
+    }
+    
+    public void MovimientoMonetario() throws IOException {
+        ObjectInputStream archConf = null;
+        try {
+            archConf = new ObjectInputStream(new FileInputStream(nomArch));
+            while (true) {
+                regConf = (Confiteria) archConf.readObject();
+                regConf.gananciasTotales();
+            }
+        } catch (Exception e) {
+            System.out.println("----  Fin del Listado!!  ----");
+        } finally {
+            archConf.close();
         }
     }
     

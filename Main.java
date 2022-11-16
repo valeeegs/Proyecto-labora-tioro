@@ -27,10 +27,11 @@ public class Main {
 					+ "2. ADICIONAR \n"
 					+ "3. AGREGAR CANTIDAD DE PRODUCTO HECHO \n" 
 					+ "4. AGREGAR PEDIDOS \n"
-					+ "5. LISTAR \n"
-					+ "6. PAGAR SUELDOS \n"
-					+ "7. ELIMINAR CONFITERIA \n"
-					+ "8. SALIR");
+					+ "5. MOSTRAR MOVIMIENTO MONETARIO\n"
+					+ "6. LISTAR \n"
+					+ "7. PAGAR SUELDOS \n"
+					+ "8. ELIMINAR CONFITERIA \n"
+					+ "9. SALIR");
 			System.out.print("Elegir la opción: ");
 			op = read.nextInt();
 			read.nextLine();
@@ -65,7 +66,7 @@ public class Main {
 								read.nextLine();
 								switch(opPropina) {
 									case 1: ncliente.propina(true);
-											break; //sus
+											break; 
 									case 2: ncliente.propina(false);
 											break;
 								}
@@ -80,23 +81,24 @@ public class Main {
 						default: System.out.println("\tNo escogió una de las opciones disponibles");
 								 break;
 					}
-					
-					
-			case 5: c.Listar();
 					break;
-			case 6: System.out.println("Ingrese la fecha actual en formato DD/MM/AA");
+			case 5: c.MovimientoMonetario();
+					break;
+			case 6: c.Listar();
+					break;
+			case 7: System.out.println("Ingrese la fecha actual en formato DD/MM/AA");
 					String fecha = read.nextLine();
 					c.pagarSueldos(fecha);
 					break;
-			case 7: System.out.println("Ingrese el nombre de la confitería a eliminar");
+			case 8: System.out.println("Ingrese el nombre de la confitería a eliminar");
 					String name = read.nextLine();
 					c.Eliminar(name);
 					break;
-			case 8: System.out.println("Fin del programa");
+			case 9: System.out.println("Fin del programa");
 					break;
 			default: System.out.println("No eligió una opción listada en el menú");
 			}
-		} while(op != 8);
+		} while(op != 9);
 		
 	}
 

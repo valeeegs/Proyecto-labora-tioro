@@ -116,10 +116,8 @@ public class Confiteria implements java.io.Serializable{
 	public void agregarPedido(Pedido p) {
 		pedidos[nroPedidos] = p;
 		nroPedidos++;
-		for(int i=0; i<nroProductos; i++) {
-			for(int j=0; j<p.getCantidadProd(); j++) { //quita del inventario los productos vendidos
-				inventario.agregarCantidad(p.getProdComprados()[j][0], (-1 * Integer.parseInt(p.getProdComprados()[j][1])));
-			}
+		for(int j=0; j<p.getCantidadProd(); j++) { //quita del inventario los productos vendidos
+			inventario.agregarCantidad(p.getProdComprados()[j][0], (-1 * Integer.parseInt(p.getProdComprados()[j][1])));
 		}
 	}
 	
